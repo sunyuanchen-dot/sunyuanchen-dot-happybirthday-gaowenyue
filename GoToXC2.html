@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>霓虹灯文字</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "MV Boli", cursive;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #111;
+            overflow: hidden;
+        }
+        h2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            color: transparent;
+            font-size: 7vw;
+            white-space: nowrap;
+        }
+        h2 span {
+            animation: LetterColor 3s linear infinite;
+            animation-delay: calc(0.1s * var(--o));
+        }
+        h2 span:nth-child(6) {
+            margin-left: 2vw;
+        }
+        @keyframes LetterColor {
+            0% {
+                color: #fff;
+                text-shadow: 
+                    0 0 10px #00b3ff,
+                    0 0 20px #00b3ff,
+                    0 0 40px #00b3ff,
+                    0 0 80px #00b3ff,
+                    0 0 120px #00b3ff,
+                    0 0 200px #00b3ff,
+                    0 0 300px #00b3ff,
+                    0 0 400px #00b3ff;
+                filter: blur(2px) hue-rotate(0deg);
+            }
+            30%, 70% {
+                color: #fff;
+                text-shadow: 
+                    0 0 10px #00b3ff,
+                    0 0 20px #00b3ff,
+                    0 0 40px #00b3ff,
+                    0 0 80px #00b3ff,
+                    0 0 120px #00b3ff,
+                    0 0 200px #00b3ff;
+                filter: blur(2px) hue-rotate(360deg);
+            }
+            100% {
+                color: transparent;
+                text-shadow: none;
+                filter: blur(2px) hue-rotate(0deg);
+            }
+        }
+        /* 自适应字体大小 */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 10vw;
+            }
+        }
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 15vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        <span style="--o:1">跳</span>
+        <span style="--o:2">转</span>
+        <span style="--o:3">中</span>
+        <span style="--o:4">,</span>
+        <span style="--o:5">请</span>
+        <span style="--o:6">等</span>
+        <span style="--o:7">待</span>
+        <span style="--o:8">.</span>
+        <span style="--o:9">.</span>
+        <span style="--o:10">.</span>
+    </h2>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = 'XC2.html';
+        }, 3000);
+    </script>
+</body>
+</html>
