@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>生日焰火</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body onselectstart="return false">
+    <div class="message">
+        <p>请单击屏幕开启背景音乐</p>
+    </div>
+    <div id="backgroundRendering" style="z-index: 0;"></div>
+    <canvas id="fireworks" style="z-index: 9999;">
+        您的浏览器不支持canvas标签。
+    </canvas>
+    <audio id="bgm" src="static/mp3/bgm.m4a" loop autoplay>
+        您的浏览器不支持 audio 标签。
+    </audio>
+    <div style="display: none">
+        <div class="shape">生 日 快 乐！</div>
+        <div class="shape">happy birthday!</div>
+        <div class="shape">好运连连</div>
+        <div class="shape">健 康 如 意</div>
+        <div class="shape">且 喜 且 乐</div>
+        <div class="shape">事 事 顺 心</div>
+        <div class="shape">朝 气 蓬 勃</div>
+        <div class="shape">学 业 进 步</div>
+    </div>
+    <script>
+        localStorage.setItem('currentPage', 1);
+    </script>
+    <script src="static/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var bgm = document.getElementById('bgm');
+            bgm.muted = false;
+            bgm.play();
+        });
+    </script>
+</body>
+</html>
